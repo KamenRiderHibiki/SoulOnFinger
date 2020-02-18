@@ -1,0 +1,9 @@
+<view  bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <image class="background"src="../../resources/pisspaper.jpg"></image>
+  <view class="weui-flex">
+    <view class="weui-flex__item" id="qwe">{{title}}</view>
+    </view>
+  <view>
+    <text class="text-style" id="asd">{{tips}}</text>
+  </view>
+</view>

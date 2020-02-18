@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mainpage/mainpage",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/disclaimer/disclaimer",
+    "pages/knowledge/knowledge",
+    "pages/activevent/activevent",
+    "pages/mypage/mypage",
+    "pages/emecont/emecont"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "指灵急救",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于指灵急救获取位置"
+    }
+  }
+}

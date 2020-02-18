@@ -1,0 +1,29 @@
+<view class="container list-container"> 
+  <view>紧急联系人</view>
+  <view class="list-item" wx:for="{{emergencyList}}" wx:key="{{item.id}}"> 
+    <view class="right" bindlongpress="deletePop" data-index="{{index}}"> 
+      <view class="title"> 
+        <view class="name">{{item.name}}</view> 
+        <view class="phone">{{item.phone}}</view> 
+      </view> 
+    </view> 
+  </view> 
+  <button class="weui-btn" type="primary" bindtap="showDialogBtn">+</button>
+  <!--弹窗-->
+  <view class="modal-mask" catchtap="preventTouchMove" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog"  wx:if="{{showModal}}">
+    <view class="modal-title">添加联系人</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" class="weui-input" maxlength="10" auto-focus type="text" bindinput="bindNameInput" placeholder="名字"/>
+      </view>
+      <view class="modal-input">
+        <input placeholder-class="input-holder" class="weui-input" maxlength="11" type="number" bindinput="bindNumInput" placeholder="电话"/>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" >取消</view>
+      <view class="btn-confirm" bindtap="onConfirm">确定</view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,31 @@
+<!--pages/test.wxml-->
+<view class="class_first" bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <image class="background"src="../../resources/bg.jpg"></image>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <image class="myinf"src="../../resources/logobw.png" catchtap="myinf" />
+      </view>
+      <view class="weui-flex__item">
+        <image wx:if="true" class="cuepulldown" src="../../resources/arrow.png" />
+      </view>
+      <view class="weui-flex__item">
+        <image class="activeventc"src="../../resources/activevent.png" catchtap="activevent" catchtouchstart="" catchtouchend=""/>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <swiper indicator-dots="{{indicatorDots}}"style="height:680rpx;" >
+          <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+              <image class="{{item.name}}" src="{{item.src}}" catchtap="warning" id="{{item.name}}"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <image class="circle-next" catchtap="warning" src="../../resources/help.png" id="reportotr"/>
+      </view>
+    </view>
+</view>

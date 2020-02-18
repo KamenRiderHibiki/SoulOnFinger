@@ -1,0 +1,84 @@
+/* pages/test.wxss */
+page {
+  /*background-image: url('http://ac-ejx0nsfy.clouddn.com/ac767407f474e1c3970a.jpg');*/
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  z-Index:-1;
+  border:1px solid blue
+}
+
+.report120{
+ position: absolute;
+  width: 625rpx;
+  height: 412rpx;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.report110{
+  position: absolute;
+  width: 613rpx;
+  height: 244rpx;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.circle-next {
+  position: relative;
+  left:25px;
+  width: 650rpx;
+  height: 300rpx;
+}
+
+
+.touched1{
+  background-color: rgb(182, 0, 0)
+}
+
+.touched2{
+  background-color: rgb(0, 0, 182)
+}
+
+.touched3{
+  background-color: rgb(0, 182, 182)
+}
+
+.myinf{
+  position: relative;
+  top:18rpx;
+  left:18rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.cuepulldown{
+  position: relative;
+  top:30rpx;
+  left:18rpx;
+  width: 231rpx;
+  height: 50rpx;
+}
+
+.activeventc{
+  position: relative;
+  top:18rpx;
+  left:85rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+

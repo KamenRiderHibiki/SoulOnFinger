@@ -1,0 +1,62 @@
+<!--pages/test.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-form-preview">
+        <view class="weui-form-preview__ft">
+                <button bindtap='refresh' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">刷新</button>
+            </view>
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">状态</view>
+                <view class="weui-form-preview__value_in-hd">{{statusText}}</view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">更新时间</view>
+                    <view class="weui-form-preview__value">{{lastUpdateTime}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">地点</view>
+                    <view class="weui-form-preview__value">{{position}}</view>
+                </view>
+                <view class="page-section page-section-gap" wx:if="{{!showModal}}">
+                  <map
+                    id="myMap"
+                    style="width:150%; height: 300px;"
+                    latitude="{{latitude}}"
+                    longitude="{{longitude}}"
+                    markers="{{markers}}"
+                    covers="{{covers}}"
+                    show-location
+                  ></map>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">备注</view>
+                    <view class="weui-form-preview__value">{{details}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator wx:if="{{showWay==2}}"class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="cancel">取消请求</navigator>
+                <navigator wx:if="{{showWay==3}}"class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="send">发送</navigator>
+                <button wx:if="{{showWay==4}}"class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"  disabled='{{finConfirm}}' bindtap="change">{{button0}}</button>
+                <button wx:if="{{showWay!=0&&showWay!=1}}"class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"bindtap="showDialogBtn">{{button1}}</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="modal-mask" catchtap="preventTouchMove" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog"  wx:if="{{showModal}}">
+  <view class="modal-title">{{descText}}</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <textarea class="detailText" 
+    bindinput="bindTextAreaBlur"
+    value="{{details}}" maxlength='150' placeholder="您可以继续填写需要的备注，最大150字">
+</textarea>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" >取消</view>
+    <view class="btn-confirm" bindtap="onConfirm">确定</view>
+  </view>
+</view>

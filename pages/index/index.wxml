@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view>欢迎使用，请点击以登录</view>
+<view>
+<button bindtap='login'>登录</button>
+</view>
+
